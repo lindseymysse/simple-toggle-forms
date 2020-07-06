@@ -17,15 +17,15 @@
 
 	Simple Toggle Menus
 
-	Design is about understanding the affordances of the medium you are working in. 
-	That is to say: you have to understand how it breaks to make something truly 
-  useful. 
 
-  When you understand what the user cannot do, you can make sure they use 
-  whatever you are designing in a certain way.
+  Design is about understanding the affordances of the medium you are working in. 
+  That is to say: you have to understand how the medium breaks to make something truly 
+  useful. When you understand what the medium cannot do, you suddenly can find
+  all sorts of ways to use it. 
 
-	Anyway, in my raging egotistical opinion, this is currently the best way to do 
-	menus in HTML, CSS and JS. 
+  Anyway, in my raging egotistical opinion, this is currently the best way to do 
+  menus in HTML and CSS.
+
 
   the variables for this menu look like this:
 
@@ -63,7 +63,7 @@
   --right-menu-width: calc(100vw - var(--menu-tag-size) - 3em);
   --bottom-menu-height: calc(90vh - var(--menu-tag-size) - 3.75em);
   --menu-bg-color: rgba(0,0,0,0.8);
-  
+
 }
 
 .menu-body {

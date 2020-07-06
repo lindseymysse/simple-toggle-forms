@@ -18,14 +18,12 @@ ___  __   __   __        ___
 
 
 Design is about understanding the affordances of the medium you are working in. 
-That is to say: you have to understand how it breaks to make something truly 
-useful. 
-
-When you understand what the user cannot do, you can make sure they use 
-whatever you are designing in a certain way.
+That is to say: you have to understand how the medium breaks to make something truly 
+useful. When you understand what the medium cannot do, you suddenly can find
+all sorts of ways to use it. 
 
 Anyway, in my raging egotistical opinion, this is currently the best way to do 
-menus in HTML, CSS and JS. 
+menus in HTML and CSS.
 
 
 ## To Use
