@@ -30,6 +30,15 @@ ___  __   __   __        ___
 	Anyway, in my raging egotistical opinion, this is currently the best way to do 
 	menus in HTML, CSS and JS. 
 
+## To Use
+
+Include the simple-toggle-menu.css in your html.
+
+``` html 
+<link rel="stylesheet" type="text/css" href="/simple-toggle-menu.css">
+```
+
+
   the variables for this menu look like this:
 
 ``` CSS
@@ -42,7 +51,7 @@ ___  __   __   __        ___
 }
 ```
 
-``` HTML
+``` html
 
   Implement the Toggle Menus like this:
 
