@@ -1,6 +1,3 @@
-# simple-toggle-forms
-Simple HUD menus in CSS. 
-
 ``` code
 *** begin ascii art ***
  __           __        ___
@@ -19,16 +16,17 @@ ___  __   __   __        ___
 
 ```
 
-	Simple Toggle Menus
 
-	Design is about understanding the affordances of the medium you are working in. 
-	That is to say: you have to understand how it breaks. Once you understand how
-	something breaks you can design around the slip. When you understand what the 
-	user cannot do, you can make sure they only use whatever you are designing
-	in a certain way.
+Design is about understanding the affordances of the medium you are working in. 
+That is to say: you have to understand how it breaks to make something truly 
+useful. 
 
-	Anyway, in my raging egotistical opinion, this is currently the best way to do 
-	menus in HTML, CSS and JS. 
+When you understand what the user cannot do, you can make sure they use 
+whatever you are designing in a certain way.
+
+Anyway, in my raging egotistical opinion, this is currently the best way to do 
+menus in HTML, CSS and JS. 
+
 
 ## To Use
 
@@ -38,8 +36,7 @@ Include the simple-toggle-menu.css in your html.
 <link rel="stylesheet" type="text/css" href="/simple-toggle-menu.css">
 ```
 
-
-  the variables for this menu look like this:
+Adjust the variables for this menu with the following variables:
 
 ``` CSS
 
@@ -51,26 +48,38 @@ Include the simple-toggle-menu.css in your html.
 }
 ```
 
+Implement the Toggle Menus like this:
+
+
 ``` html
 
-  Implement the Toggle Menus like this:
 
-  <div id="left-menu" class="left-menu menu">
-    <input type="checkbox" name="open" class="left-menu-tag menu-tag" checked/>
-    <div id="left-menu-content" class="left-menu-form menu-body"></div>
+<div id="left-menu" class="left-menu menu">
+  <input type="checkbox" name="open" class="left-menu-tag menu-tag" checked/>
+  <div id="left-menu-content" class="left-menu-form menu-body">
+
+  	<!-- Put your menu content here -->
+
   </div>
+</div>
 
-  <div id="right-menu" class="right-menu menu">
-    <input type="checkbox" name="menu-tag" class="right-menu-tag menu-tag" checked/>
-    <div id="right-menu-content" class="right-menu-form menu-body" accept-charset="utf-8">
-    </div>
+<div id="right-menu" class="right-menu menu">
+  <input type="checkbox" name="menu-tag" class="right-menu-tag menu-tag" checked/>
+  <div id="right-menu-content" class="right-menu-form menu-body" accept-charset="utf-8">
+
+    	<!-- Put your menu content here -->
+
   </div>
+</div>
 
-  <div id="bottom-menu" class="bottom-menu menu">
-    <input id="bottom-menu-checkbox" type="checkbox" name="menu-tag" class="bottom-menu-tag menu-tag" checked />
-    <div id="bottom-menu-content" class="menu-body bottom-menu-form" accept-charset="utf-8">
-    </div>
-  </div> 
+<div id="bottom-menu" class="bottom-menu menu">
+  <input id="bottom-menu-checkbox" type="checkbox" name="menu-tag" class="bottom-menu-tag menu-tag" checked />
+  <div id="bottom-menu-content" class="menu-body bottom-menu-form" accept-charset="utf-8">
+
+    	<!-- Put your menu content here -->
+
+  </div>
+</div> 
 
 ```
 LNSY 
