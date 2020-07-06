@@ -1,0 +1,204 @@
+/*
+
+	*** begin ascii art ***
+	 __           __        ___
+	/__` |  |\/| |__) |    |__
+	.__/ |  |  | |    |___ |___
+	
+	___  __   __   __        ___
+	 |  /  \ / _` / _` |    |__
+	 |  \__/ \__> \__> |___ |___
+	
+	       ___            __
+	 |\/| |__  |\ | |  | /__`
+	 |  | |___ | \| \__/ .__/
+	
+	*** end ascii art ***
+
+	Simple Toggle Menus
+
+	Design is about understanding the affordances of the medium you are working in. 
+	That is to say: you have to understand how it breaks. Once you understand how
+	something breaks you can design around the slip. When you understand what the 
+	user cannot do, you can make sure they only use whatever you are designing
+	in a certain way.
+
+	Anyway, in my raging egotistical opinion, this is currently the best way to do 
+	menus in HTML, CSS and JS. 
+
+  the variables for this menu look like this:
+
+  --menu-tag-size: 2em;
+  --left-menu-width: calc(100vw - var(--menu-tag-size) - 3em);
+  --right-menu-width: calc(100vw - var(--menu-tag-size) - 3em);
+  --bottom-menu-height: calc(90vh - var(--menu-tag-size) - 3.75em);
+
+  Implement the Toggle Menus like this:
+
+  <div id="left-menu" class="left-menu menu">
+    <input type="checkbox" name="open" class="left-menu-tag menu-tag" checked/>
+    <div id="left-menu-content" class="left-menu-form menu-body"></div>
+  </div>
+
+  <div id="right-menu" class="right-menu menu">
+    <input type="checkbox" name="menu-tag" class="right-menu-tag menu-tag" checked/>
+    <div id="right-menu-content" class="right-menu-form menu-body" accept-charset="utf-8">
+    </div>
+  </div>
+
+  <div id="bottom-menu" class="bottom-menu menu">
+    <input id="bottom-menu-checkbox" type="checkbox" name="menu-tag" class="bottom-menu-tag menu-tag" checked />
+    <div id="bottom-menu-content" class="menu-body bottom-menu-form" accept-charset="utf-8">
+    </div>
+  </div> 
+
+	LNSY 
+*/
+
+
+:root {
+  --menu-tag-size: 2em;
+  --left-menu-width: calc(100vw - var(--menu-tag-size) - 3em);
+  --right-menu-width: calc(100vw - var(--menu-tag-size) - 3em);
+  --bottom-menu-height: calc(90vh - var(--menu-tag-size) - 3.75em);
+}
+
+.menu-body {
+  background-color: var(--menu-bg-color);
+  border: 1px solid white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  z-index: 9999;
+}
+
+.menu-body video {
+  width: 100%;
+  height: auto;
+}
+
+.menu-body canvas {
+  width: 100%;
+  height: auto;
+}
+
+.menu-tag {
+  border: 1px solid white;
+  width: var(--menu-tag-size);
+  height: var(--menu-tag-size);
+  cursor: pointer;
+  z-index: 99999;
+}
+
+.menu-tag:checked {
+  border: 1px solid grey;
+}
+
+.menu-tag:active {
+  border: 1px solid red;
+}
+
+
+
+.left-menu form {
+  height: 100%;
+}
+
+.right-menu form {
+  height: 100%;
+}
+
+
+
+.left-menu-tag {
+  position: absolute;
+  transition: transform 0.1s linear;
+  transform: translateZ(1pt);
+  left: 0pt;
+}
+
+.left-menu-tag:checked {
+  transform: translateX(calc(var(--left-menu-width)  - 1.5em));
+}
+
+.left-menu-tag:active {
+  border: 1px solid red;
+}
+
+#left-menu-content {
+  position: absolute;
+  width: var(--left-menu-width);
+  transition: transform 0.1s linear;
+  transform: translate3d(calc((var(--left-menu-width) * -1) - 10pt), 0, 1pt);
+  height: calc(100vh - 2pt);
+}
+
+.left-menu-tag:checked ~ #left-menu-content {
+  position: absolute;
+  transform: translateX(0pt);
+
+}
+
+.right-menu-tag {
+  position: absolute;
+  transition: transform 0.1s linear;
+  transform: translateX(0pt);
+  right: 0pt;
+}
+
+.right-menu-tag:checked {
+  transform: translateX(calc(var(--right-menu-width) * -1 + 1.5em));
+}
+
+.right-menu-tag:active {
+  border: 1px solid red;
+}
+
+#right-menu-content {
+  position: absolute;
+  width: var(--right-menu-width);
+  right: 0;
+  transform: translateX(calc(var(--right-menu-width) - 1pt));
+  transition: transform 0.1s linear;
+  height: calc(100vh - 2pt);
+
+}
+
+.right-menu-tag:checked ~ #right-menu-content {
+  transform: translateX(0pt);
+}
+
+
+.bottom-menu {
+}
+
+.bottom-menu-tag {
+  position: absolute;
+  transition: transform 0.1s linear;
+  transform: translateY(0pt);
+  bottom: 2pt;
+  left: 0pt;
+}
+
+.bottom-menu-tag:checked {
+  transform: translateY(calc(var(--bottom-menu-height) * -1 - 1em));
+}
+
+.bottom-menu-tag:active {
+  border: 1px solid red;
+}
+
+#bottom-menu-content {
+  position: absolute;
+  width: calc(100vw - 2px);
+  left: 0pt;
+  bottom: 0pt;
+  height: var(--bottom-menu-height);
+  overflow-y: scroll;
+  transform: translateY(calc(var(--bottom-menu-height) + 2pt));
+  transition: transform 0.1s linear;
+}
+
+.bottom-menu-tag:checked ~ #bottom-menu-content {
+  transform: translateY(-2pt);
+}
