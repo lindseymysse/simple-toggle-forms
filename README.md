@@ -45,6 +45,8 @@ Adjust the variables for this menu with the following variables:
   --left-menu-width: calc(100vw - var(--menu-tag-size) - 3em);
   --right-menu-width: calc(100vw - var(--menu-tag-size) - 3em);
   --bottom-menu-height: calc(90vh - var(--menu-tag-size) - 3.75em);
+  --menu-bg-color: rgba(0,0,0,0.8);
+
 }
 ```
 
